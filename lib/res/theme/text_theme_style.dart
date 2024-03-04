@@ -73,7 +73,7 @@ class AppTextStyles {
   }
 
   static TextStyle poppinsTitle({
-    Color color = AppColors.primaryColor,
+    Color color = AppColors.textColor,
     double fontSize = 24,
     FontWeight fontWeight = FontWeight.bold,
     String fontFamily = 'Poppins',

@@ -14,7 +14,7 @@ buildBottomNavigationMenu(context, landingPageController) {
       TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
 
   return Obx(() => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: BottomNavigationBar(

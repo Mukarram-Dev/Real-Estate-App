@@ -9,6 +9,7 @@ class AppColors {
   static const Color secondaryColor = Color(0xff313131);
   static const Color darkBlue = Color(0xFF205072);
   static const Color bottombarColor = Color(0xFF4b4a4a);
+  static const Color backgroundColor = Color(0xFFf2f1ef);
 
   static const Color white = Color(0xFFFFFFFF);
   static const Color white10 = Colors.white70;

@@ -1,5 +1,8 @@
 class ImageAssets {
   static const String appLogo = 'assets/images/app_logo.png';
+  static const String house4 = 'assets/images/house_4.jpg';
+  static const String house2 = 'assets/images/house_2.jpg';
+  static const String house5 = 'assets/images/house_5.jpg';
 
   //svg paths
 
