@@ -9,11 +9,11 @@ class AppTextStyles {
     String fontFamily = 'Inter',
   }) {
     return TextStyle(
-      color: color,
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      fontFamily: fontFamily,
-    );
+        color: color,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        fontFamily: fontFamily,
+        height: 1.5);
   }
 
   static TextStyle interSmall({
@@ -87,7 +87,7 @@ class AppTextStyles {
   }
 
   static TextStyle poppinsNormal({
-    Color color = AppColors.black,
+    Color color = AppColors.secondaryColor,
     double fontSize = 16,
     FontWeight fontWeight = FontWeight.bold,
     String fontFamily = 'Poppins',
