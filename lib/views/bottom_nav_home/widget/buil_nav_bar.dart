@@ -32,7 +32,8 @@ buildBottomNavigationMenu(context, landingPageController) {
               buildNavItem(ImageAssets.homeIcon, ImageAssets.homeIcon, 'Home'),
               buildNavItem(ImageAssets.unfilledHeart, ImageAssets.unfilledHeart,
                   'Favourite'),
-              buildNavItem(ImageAssets.saveIcon, ImageAssets.saveIcon, 'Saved'),
+              buildNavItem(
+                  ImageAssets.savedIcon, ImageAssets.unsavedIcon, 'Saved'),
             ],
           ),
         ),

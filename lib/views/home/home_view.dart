@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: AppConstants.listOfProperties.length,
                 itemBuilder: (context, index) => PropertyListContainer(
-                  index: index,
+                  property: AppConstants.listOfProperties[index],
                 ),
               ),
             ),

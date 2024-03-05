@@ -1,5 +1,5 @@
 class ImageAssets {
-  static const String appLogo = 'assets/images/app_logo.png';
+  static const String appLogo = 'assets/images/app_logo.jpg';
   static const String house4 = 'assets/images/house_4.jpg';
   static const String house2 = 'assets/images/house_2.jpg';
   static const String house3 = 'assets/images/house_3.jpg';
@@ -18,7 +18,8 @@ class ImageAssets {
   static const String userPic = 'assets/svg/user_pic.svg';
   static const String settingIcon = 'assets/svg/settings_icon.svg';
   static const String addFavIcon = 'assets/svg/add_favourite.svg';
-  static const String saveIcon = 'assets/svg/save_icon.svg';
+  static const String savedIcon = 'assets/svg/saved_icon.svg';
+  static const String unsavedIcon = 'assets/svg/unsave_icon.svg';
   static const String filledHeart = 'assets/svg/filled_heart.svg';
   static const String unfilledHeart = 'assets/svg/unfilled_heart.svg';
 }

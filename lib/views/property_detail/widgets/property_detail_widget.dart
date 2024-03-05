@@ -3,7 +3,6 @@ import 'package:real_estate/model/property_model.dart';
 import 'package:real_estate/res/theme/colors.dart';
 import 'package:real_estate/res/theme/text_theme_style.dart';
 import 'package:real_estate/utils/gaps.dart';
-
 import 'package:real_estate/views/property_detail/widgets/list_tile_widget.dart';
 
 class PropertyDetailWidget extends StatelessWidget {
@@ -17,10 +16,7 @@ class PropertyDetailWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ListTileWidget(
-          propertyName: property.propertyName,
-          propertyLocation: property.propertyLocation,
-        ),
+        ListTileWidget(property: property),
         Gaps.verticalGapOf(10),
         Wrap(
           spacing: 20,

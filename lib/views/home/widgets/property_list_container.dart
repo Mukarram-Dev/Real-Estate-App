@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/route_manager.dart';
+import 'package:real_estate/model/property_model.dart';
 import 'package:real_estate/res/assets/image_assets.dart';
 import 'package:real_estate/res/routes/routes_name.dart';
 import 'package:real_estate/res/theme/colors.dart';
 import 'package:real_estate/res/theme/text_theme_style.dart';
-import 'package:real_estate/utils/app_constants.dart';
 import 'package:real_estate/utils/gaps.dart';
+import 'package:real_estate/views/property_detail/controller/property_controller.dart';
 
 class PropertyListContainer extends StatelessWidget {
-  final int index;
-  const PropertyListContainer({Key? key, required this.index})
+  final PropertyModel property;
+  const PropertyListContainer({Key? key, required this.property})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final property = AppConstants.listOfProperties[index];
+    final propertyController = Get.find<PropertyController>();
 
     return Padding(
-      padding: const EdgeInsets.only(right: 20),
+      padding: const EdgeInsets.only(
+        right: 20,
+      ),
       child: InkWell(
         onTap: () =>
             Get.toNamed(RouteName.propertyRoute, arguments: [property]),
@@ -97,12 +102,17 @@ class PropertyListContainer extends StatelessWidget {
                               color: AppColors.secondaryColor,
                               fontWeight: FontWeight.bold),
                         ),
-                        SvgPicture.asset(
-                          ImageAssets.saveIcon,
-                          height: 25,
-                          colorFilter: const ColorFilter.mode(
-                              AppColors.primaryColor, BlendMode.srcIn),
-                        )
+                        Obx(
+                          () => SvgPicture.asset(
+                            propertyController.savePropertyList
+                                    .contains(property)
+                                ? ImageAssets.savedIcon
+                                : ImageAssets.unsavedIcon,
+                            height: 25,
+                            colorFilter: const ColorFilter.mode(
+                                AppColors.primaryColor, BlendMode.srcIn),
+                          ),
+                        ),
                       ],
                     ),
                     Gaps.verticalGapOf(3),

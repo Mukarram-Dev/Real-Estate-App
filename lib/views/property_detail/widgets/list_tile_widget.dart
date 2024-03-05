@@ -1,56 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:real_estate/model/property_model.dart';
 import 'package:real_estate/res/assets/image_assets.dart';
 import 'package:real_estate/res/theme/colors.dart';
 import 'package:real_estate/res/theme/text_theme_style.dart';
 import 'package:real_estate/utils/gaps.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/views/property_detail/controller/property_controller.dart';
 
 class ListTileWidget extends StatelessWidget {
-  final String propertyName;
-  final String propertyLocation;
+  final PropertyModel property;
 
-  const ListTileWidget(
-      {Key? key, required this.propertyName, required this.propertyLocation})
-      : super(key: key);
+  const ListTileWidget({Key? key, required this.property}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final propertyController = Get.find<PropertyController>();
+
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(vertical: 5),
       title: Text(
-        propertyName,
+        property.propertyName,
         style: AppTextStyles.interHeading(
             fontSize: 20,
             color: AppColors.secondaryColor,
             fontWeight: FontWeight.bold),
       ),
-      subtitle: Row(
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(
-            Icons.location_on,
-            size: 20,
-            color: AppColors.textColor,
-          ),
-          Gaps.horizontalGapOf(5),
-          Text(
-            propertyLocation,
-            style: AppTextStyles.interSubtitle(
-                color: AppColors.textColor, fontWeight: FontWeight.bold),
+          Gaps.verticalGapOf(5),
+          Row(
+            children: [
+              const Icon(
+                Icons.location_on,
+                size: 20,
+                color: AppColors.textColor,
+              ),
+              Gaps.horizontalGapOf(5),
+              Text(
+                property.propertyLocation,
+                style: AppTextStyles.interSubtitle(
+                    color: AppColors.textColor, fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
         ],
       ),
       trailing: Container(
-        height: 50,
-        width: 50,
+        height: 40,
+        width: 40,
         decoration: const BoxDecoration(
           color: AppColors.white,
           shape: BoxShape.circle,
         ),
         child: Center(
-          child: SvgPicture.asset(
-            ImageAssets.saveIcon,
-            colorFilter:
-                const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
+          child: InkWell(
+            onTap: () {
+              propertyController.saveProperty(property);
+            },
+            child: Obx(
+              () => SvgPicture.asset(
+                propertyController.savePropertyList.contains(property)
+                    ? ImageAssets.savedIcon
+                    : ImageAssets.unsavedIcon,
+                height: 25,
+                colorFilter: const ColorFilter.mode(
+                    AppColors.primaryColor, BlendMode.srcIn),
+              ),
+            ),
           ),
         ),
       ),

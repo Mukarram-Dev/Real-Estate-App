@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate/res/routes/routes.dart';
 import 'package:real_estate/res/theme/colors.dart';
+import 'package:real_estate/views/property_detail/controller/property_controller.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Get.put(PropertyController()); // Initialize controller
   runApp(const MyApp());
 }
 
