@@ -19,7 +19,7 @@ class PropertyView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              TopImageWidget(imageUrl: property.propertyImage),
+              TopImageWidget(property: property),
               Padding(
                 padding: const EdgeInsetsDirectional.all(
                     Dimensions.paddingSizeDefault),

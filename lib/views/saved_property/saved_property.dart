@@ -37,7 +37,8 @@ class SavedPropertyView extends StatelessWidget {
                         ),
                       )
                     : ListView.separated(
-                        separatorBuilder: (context, index) => const Divider(),
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(height: 20),
                         padding: const EdgeInsets.only(bottom: 10),
                         shrinkWrap: true,
                         primary: false,

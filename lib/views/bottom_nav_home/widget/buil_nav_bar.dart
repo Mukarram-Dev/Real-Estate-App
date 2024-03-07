@@ -18,7 +18,6 @@ buildBottomNavigationMenu(context, landingPageController) {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
             showSelectedLabels: true,
             onTap: landingPageController.changeTabIndex,

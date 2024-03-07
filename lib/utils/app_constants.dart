@@ -9,7 +9,7 @@ class AppConstants {
     PropertyModel(
       propertyName: 'Spectra Apartments',
       propertyLocation: 'California, United States',
-      propertyPrice: 18000,
+      propertyPrice: 1800,
       propertyDescription:
           'Nestled amidst rolling hills and verdant countryside, this quaint farmhouse exudes rustic charm and tranquility. Sunlight streams through the large windows, illuminating the open-concept living space with its exposed beams and cozy fireplace. ',
       propertyBathroom: 3,
@@ -21,7 +21,7 @@ class AppConstants {
     PropertyModel(
       propertyName: 'Aces Villa',
       propertyLocation: 'New York, United States',
-      propertyPrice: 40000,
+      propertyPrice: 4000,
       propertyDescription:
           'Nestled in a charming neighborhood, this cozy studio apartment boasts a delightful balcony perfect for enjoying morning coffee and evening sunsets. The efficient layout maximizes space, offering a well-equipped kitchenette and a comfortable living area that seamlessly transforms into a sleeping haven at night.',
       propertyBathroom: 6,
@@ -33,7 +33,7 @@ class AppConstants {
     PropertyModel(
       propertyName: 'Green Yella',
       propertyLocation: 'Lahore, Pakistan',
-      propertyPrice: 20000,
+      propertyPrice: 2000,
       propertyDescription:
           'Immerse yourself in coastal living in this stunning beachside condo. Step onto your private balcony and breathe in the fresh ocean air, or take a short stroll to the sandy shores just steps away. The spacious interior features two bedrooms and two bathrooms, providing ample space for families or those seeking a work-from-home haven.',
       propertyBathroom: 3,
@@ -45,7 +45,7 @@ class AppConstants {
     PropertyModel(
       propertyName: 'Barkat House',
       propertyLocation: 'Karachi, Pakistan',
-      propertyPrice: 60000,
+      propertyPrice: 6000,
       propertyDescription:
           'Experience the grandeur of vintage charm in this beautifully restored Victorian townhouse. Original stained glass windows and gleaming hardwood floors create a sense of character and timeless elegance. The expansive living area provides ample space for entertaining, while the cozy bedrooms offer a quiet escape.',
       propertyBathroom: 5,

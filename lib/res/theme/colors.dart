@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-@immutable
 class AppColors {
 //Primary Colors
 
@@ -10,6 +9,7 @@ class AppColors {
   static const Color darkBlue = Color(0xFF205072);
   static const Color bottombarColor = Color(0xFF4b4a4a);
   static const Color backgroundColor = Color(0xFFf2f1ef);
+  static const Color redColor = Color.fromARGB(192, 235, 6, 6);
 
   static const Color white = Color(0xFFFFFFFF);
   static const Color white10 = Colors.white70;
