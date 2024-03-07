@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate/res/theme/colors.dart';
@@ -36,15 +37,19 @@ class FavouritePropertyView extends StatelessWidget {
                               color: AppColors.secondaryColor),
                         ),
                       )
-                    : ListView.separated(
-                        separatorBuilder: (context, index) =>
-                            const SizedBox(height: 20),
-                        padding: const EdgeInsets.only(bottom: 10),
-                        shrinkWrap: true,
-                        primary: false,
-                        itemCount: propertyController.favPropertyList.length,
-                        itemBuilder: (context, index) => FavouriteListContainer(
-                          property: propertyController.favPropertyList[index],
+                    : FadeInLeft(
+                        duration: const Duration(seconds: 2),
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) =>
+                              const SizedBox(height: 20),
+                          padding: const EdgeInsets.only(bottom: 10),
+                          shrinkWrap: true,
+                          primary: false,
+                          itemCount: propertyController.favPropertyList.length,
+                          itemBuilder: (context, index) =>
+                              FavouriteListContainer(
+                            property: propertyController.favPropertyList[index],
+                          ),
                         ),
                       )
               ],

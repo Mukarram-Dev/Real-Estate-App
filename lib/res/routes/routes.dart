@@ -30,19 +30,19 @@ class AppRoutes {
         GetPage(
           name: RouteName.propertyRoute,
           page: () => const PropertyView(),
-          transitionDuration: const Duration(microseconds: 250),
-          transition: Transition.leftToRightWithFade,
+          transitionDuration: const Duration(microseconds: 800),
+          transition: Transition.leftToRight,
         ),
         GetPage(
           name: RouteName.favPropertyRoute,
           page: () => const FavouritePropertyView(),
-          transitionDuration: const Duration(microseconds: 250),
+          transitionDuration: const Duration(microseconds: 800),
           transition: Transition.leftToRightWithFade,
         ),
         GetPage(
           name: RouteName.savedPropertyRoute,
           page: () => const SavedPropertyView(),
-          transitionDuration: const Duration(microseconds: 250),
+          transitionDuration: const Duration(microseconds: 800),
           transition: Transition.leftToRightWithFade,
         ),
       ];

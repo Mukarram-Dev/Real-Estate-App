@@ -64,7 +64,7 @@ class PropertyListContainer extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            'Rs. ',
+                            '\$ ',
                             style: AppTextStyles.poppinsNormal(
                                 color: AppColors.white),
                           ),

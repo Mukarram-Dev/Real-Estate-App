@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_estate/res/theme/colors.dart';
@@ -43,8 +44,12 @@ class SavedPropertyView extends StatelessWidget {
                         shrinkWrap: true,
                         primary: false,
                         itemCount: propertyController.savePropertyList.length,
-                        itemBuilder: (context, index) => PropertyListContainer(
-                          property: propertyController.savePropertyList[index],
+                        itemBuilder: (context, index) => FadeInUp(
+                          duration: const Duration(seconds: 1),
+                          child: PropertyListContainer(
+                            property:
+                                propertyController.savePropertyList[index],
+                          ),
                         ),
                       )
               ],

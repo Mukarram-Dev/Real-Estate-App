@@ -10,6 +10,7 @@ import 'package:real_estate/views/home/widgets/property_list_container.dart';
 import 'package:real_estate/views/home/widgets/spacebetween_widget.dart';
 import 'package:real_estate/views/home/widgets/top_bar_home_widget.dart';
 import 'package:real_estate/views/property_detail/controller/property_controller.dart';
+import 'package:animate_do/animate_do.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -23,7 +24,9 @@ class HomeView extends StatelessWidget {
         padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
         child: ListView(
           children: [
-            const TopBarHomWidget(),
+            FadeInUp(
+                duration: const Duration(seconds: 3),
+                child: const TopBarHomWidget()),
             Gaps.verticalGapOf(20),
             spaceBetweenRow('Featured Properties', 'more'),
             Gaps.verticalGapOf(20),
@@ -39,19 +42,22 @@ class HomeView extends StatelessWidget {
                   itemCount: propertyController.filteredList.isEmpty
                       ? 1
                       : propertyController.filteredList.length,
-                  itemBuilder: (context, index) =>
-                      propertyController.filteredList.isEmpty
-                          ? Center(
-                              child: Align(
-                                child: Text(
-                                  'No Such Property Found',
-                                  style: AppTextStyles.poppinSmall(),
-                                ),
-                              ),
-                            )
-                          : PropertyListContainer(
-                              property: propertyController.filteredList[index],
+                  itemBuilder: (context, index) => propertyController
+                          .filteredList.isEmpty
+                      ? Center(
+                          child: Align(
+                            child: Text(
+                              'No Such Property Found',
+                              style: AppTextStyles.poppinSmall(),
                             ),
+                          ),
+                        )
+                      : FadeInRight(
+                          duration: const Duration(seconds: 3),
+                          child: PropertyListContainer(
+                            property: propertyController.filteredList[index],
+                          ),
+                        ),
                 ),
               ),
             ),
@@ -67,8 +73,11 @@ class HomeView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: AppConstants.categories.length,
-                itemBuilder: (context, index) => CategoryListContainer(
-                  index: index,
+                itemBuilder: (context, index) => FadeInDown(
+                  duration: const Duration(seconds: 3),
+                  child: CategoryListContainer(
+                    index: index,
+                  ),
                 ),
               ),
             ),
