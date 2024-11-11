@@ -13,12 +13,12 @@ class BottomSheetProperty extends StatelessWidget {
       enableDrag: false,
       builder: (context) {
         return Container(
-          height: 80,
+          height: 100,
           decoration: const BoxDecoration(
             color: AppColors.white,
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -26,7 +26,7 @@ class BottomSheetProperty extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "Rs. $price",
+                        text: "\$$price",
                         style: AppTextStyles.poppinsTitle(
                             color: AppColors.textColor),
                       ),

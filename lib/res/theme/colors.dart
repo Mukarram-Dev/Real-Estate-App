@@ -10,6 +10,7 @@ class AppColors {
   static const Color bottombarColor = Color(0xFF4b4a4a);
   static const Color backgroundColor = Color(0xFFf2f1ef);
   static const Color redColor = Color.fromARGB(192, 235, 6, 6);
+  static const Color grey1 = Color(0xff8A8A8E);
 
   static const Color white = Color(0xFFFFFFFF);
   static const Color white10 = Colors.white70;

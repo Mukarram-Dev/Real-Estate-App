@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:real_estate/res/assets/image_assets.dart';
+import 'package:real_estate/res/theme/colors.dart';
 import 'package:real_estate/res/theme/text_theme_style.dart';
-import 'package:real_estate/utils/app_constants.dart';
 import 'package:real_estate/utils/gaps.dart';
 import 'package:real_estate/views/home/widgets/search_widget.dart';
 
@@ -11,31 +9,46 @@ class TopBarHomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Gaps.verticalGapOf(10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        color: AppColors.primaryColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AppConstants.appName,
-              style: AppTextStyles.poppinsTitle(),
+            Gaps.verticalGapOf(10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RichText(
+                    text: TextSpan(
+                        text: 'Welcome Back!\n',
+                        style: AppTextStyles.interBody(color: AppColors.white),
+                        children: [
+                      TextSpan(
+                          text: 'John Smith',
+                          style: AppTextStyles.poppinsTitle(
+                              color: AppColors.white)),
+                    ])),
+                const CircleAvatar(
+                  radius: 20,
+                  backgroundColor: AppColors.white,
+                  child: Icon(
+                    Icons.notifications,
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+              ],
             ),
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.elliptical(20, 20)),
-              child: SvgPicture.asset(
-                ImageAssets.userPic,
-                height: 40,
-                width: 40,
-              ),
-            ),
+            Gaps.verticalGapOf(30),
+            const SearchContainerWidget(),
           ],
         ),
-        Gaps.verticalGapOf(30),
-        const SearchContainerWidget(),
-      ],
+      ),
     );
   }
 }

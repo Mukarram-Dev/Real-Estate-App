@@ -17,7 +17,7 @@ Row spaceBetweenRow(String leadingString, String trailingString) {
         child: Text(
           trailingString,
           style: AppTextStyles.interBody(
-              color: AppColors.textColor, fontWeight: FontWeight.normal),
+              color: AppColors.textColor, fontWeight: FontWeight.w600),
         ),
       ),
     ],
