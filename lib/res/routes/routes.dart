@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:real_estate/res/routes/routes_name.dart';
+import 'package:real_estate/views/all%20properties/all_properties_view.dart';
 import 'package:real_estate/views/bottom_nav_home/bottom_nav_home.dart';
 import 'package:real_estate/views/favourite_property/fav_property.dart';
 import 'package:real_estate/views/home/home_view.dart';
@@ -30,6 +31,12 @@ class AppRoutes {
         GetPage(
           name: RouteName.propertyRoute,
           page: () => const PropertyView(),
+          transitionDuration: const Duration(microseconds: 800),
+          transition: Transition.leftToRight,
+        ),
+        GetPage(
+          name: RouteName.allPropertyRoute,
+          page: () => const AllPropertiesView(),
           transitionDuration: const Duration(microseconds: 800),
           transition: Transition.leftToRight,
         ),

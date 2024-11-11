@@ -57,10 +57,9 @@ class AppConstants {
   ];
 
   static List<Category> categories = [
-    const Category(title: "Apartments", imageUrl: ImageAssets.apartment1),
-    const Category(title: "Houses", imageUrl: ImageAssets.house5),
-    const Category(title: "Offices", imageUrl: ImageAssets.house8),
-    const Category(title: "Lands", imageUrl: ImageAssets.farm1),
-    // Add more categories here
+    Category("Houses", ImageAssets.house5, true),
+    Category("Apartments", ImageAssets.apartment1, false),
+    Category("Offices", ImageAssets.house8, false),
+    Category("Lands", ImageAssets.farm1, false),
   ];
 }

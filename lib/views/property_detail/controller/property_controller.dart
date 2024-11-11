@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:real_estate/model/category.dart';
 import 'package:real_estate/model/property_model.dart';
 import 'package:real_estate/utils/app_constants.dart';
 import 'package:real_estate/utils/utils.dart';
@@ -7,6 +8,12 @@ class PropertyController extends GetxController {
   final savePropertyList = <PropertyModel>[].obs;
   final favPropertyList = <PropertyModel>[].obs;
   final searchQuery = RxString('');
+
+  final _category = 'Houses'.obs;
+  final RxList<Category> _categoryList = AppConstants.categories.obs;
+
+  RxString get catergory => _category;
+  RxList<Category> get categoryList => _categoryList;
 
 //search query to filter list of property
   final listOfProperties = AppConstants.listOfProperties.obs;
@@ -42,5 +49,11 @@ class PropertyController extends GetxController {
       Utils.toastMessage('Removed from favourite');
       update();
     }
+  }
+
+  void updateCatergory(String newVal, bool val, int index) {
+    _category.value = newVal;
+    _categoryList[index].isSelected = val;
+    update();
   }
 }

@@ -4,6 +4,7 @@ class RouteName {
   static const String bottomNavRoute = "/bottomNavRoute";
   static const String loginRoute = "/login";
   static const String propertyRoute = "/propertyRoute";
+  static const String allPropertyRoute = "/allProperty";
   static const String favPropertyRoute = "/favPropertyRoute";
   static const String savedPropertyRoute = "/savedPropertyRoute";
 }

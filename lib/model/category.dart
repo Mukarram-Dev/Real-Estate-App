@@ -1,6 +1,11 @@
 class Category {
-  final String title;
-  final String imageUrl;
+  String title;
+  String imageUrl;
+  bool isSelected;
 
-  const Category({required this.title, required this.imageUrl});
+  Category(
+    this.title,
+    this.imageUrl,
+    this.isSelected,
+  );
 }
