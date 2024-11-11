@@ -23,6 +23,12 @@ class PropertyController extends GetxController {
           .contains(searchQuery.toLowerCase()))
       .toList();
 
+  List<PropertyModel> get filteredProperties => listOfProperties
+      .where((property) => property.propertyType
+          .toLowerCase()
+          .contains(_category.value.toLowerCase()))
+      .toList();
+
 //to save property
   void saveProperty(PropertyModel property) {
     if (!savePropertyList.contains(property)) {
@@ -52,8 +58,11 @@ class PropertyController extends GetxController {
   }
 
   void updateCatergory(String newVal, bool val, int index) {
+    // Deselect all categories before setting the new selection
+    for (var category in _categoryList) {
+      category.isSelected.value = false;
+    }
     _category.value = newVal;
-    _categoryList[index].isSelected = val;
-    update();
+    _categoryList[index].isSelected.value = val;
   }
 }

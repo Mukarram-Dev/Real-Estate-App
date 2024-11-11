@@ -23,11 +23,11 @@ class HorizontalCategoriesView extends StatelessWidget {
             return CategoryCard(
               index: index,
               onPressed: (b) {
-                for (var category in propertyController.categoryList) {
-                  category.isSelected = false;
-                }
                 propertyController.updateCatergory(
-                    propertyController.categoryList[index].title, true, index);
+                  propertyController.categoryList[index].title,
+                  b,
+                  index,
+                );
               },
             );
           },

@@ -8,6 +8,7 @@ class PropertyModel {
   final int propertyBeds;
   final int propertyFloor;
   final int propertyArea;
+  final String propertyType;
   PropertyModel({
     required this.propertyImage,
     required this.propertyName,
@@ -18,5 +19,6 @@ class PropertyModel {
     required this.propertyBeds,
     required this.propertyFloor,
     required this.propertyArea,
+    required this.propertyType,
   });
 }

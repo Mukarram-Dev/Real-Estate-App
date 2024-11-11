@@ -1,11 +1,13 @@
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+
 class Category {
   String title;
   String imageUrl;
-  bool isSelected;
+  RxBool isSelected;
 
   Category(
     this.title,
     this.imageUrl,
-    this.isSelected,
-  );
+    bool isSelected,
+  ) : isSelected = RxBool(isSelected); // Initialize as reactive
 }

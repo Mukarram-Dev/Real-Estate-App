@@ -31,9 +31,11 @@ class HomeView extends StatelessWidget {
             spaceBetweenRow('Featured Properties', 'more'),
             Gaps.verticalGapOf(20),
             SizedBox(
-              height: Get.height * 0.42,
+              height: Get.height * 0.38,
               child: Obx(
-                () => ListView.builder(
+                () => ListView.separated(
+                  separatorBuilder: (context, index) =>
+                      Gaps.horizontalGapOf(30),
                   primary: false,
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.only(bottom: 10),
@@ -41,23 +43,20 @@ class HomeView extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: propertyController.filteredList.isEmpty
                       ? 1
-                      : propertyController.filteredList.length,
-                  itemBuilder: (context, index) => propertyController
-                          .filteredList.isEmpty
-                      ? Center(
-                          child: Align(
-                            child: Text(
-                              'No Such Property Found',
-                              style: AppTextStyles.poppinSmall(),
+                      : propertyController.filteredList.length - 2,
+                  itemBuilder: (context, index) =>
+                      propertyController.filteredList.isEmpty
+                          ? Center(
+                              child: Align(
+                                child: Text(
+                                  'No Such Property Found',
+                                  style: AppTextStyles.poppinSmall(),
+                                ),
+                              ),
+                            )
+                          : PropertyListContainer(
+                              property: propertyController.filteredList[index],
                             ),
-                          ),
-                        )
-                      : FadeInRight(
-                          duration: const Duration(seconds: 3),
-                          child: PropertyListContainer(
-                            property: propertyController.filteredList[index],
-                          ),
-                        ),
                 ),
               ),
             ),

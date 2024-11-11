@@ -22,7 +22,7 @@ class CategoryCard extends StatelessWidget {
         () => Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
-            color: propertyController.categoryList[index].isSelected
+            color: propertyController.categoryList[index].isSelected.value
                 ? AppColors.primaryColor
                 : AppColors.white10,
             borderRadius: BorderRadius.circular(20),
@@ -30,7 +30,7 @@ class CategoryCard extends StatelessWidget {
           child: Center(
             child: Text(propertyController.categoryList[index].title,
                 style: AppTextStyles.poppinSmall(
-                  color: propertyController.categoryList[index].isSelected
+                  color: propertyController.categoryList[index].isSelected.value
                       ? AppColors.white
                       : Colors.grey,
                 )),

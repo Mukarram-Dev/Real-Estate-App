@@ -17,6 +17,7 @@ class AppConstants {
       propertyFloor: 3,
       propertyArea: 1400,
       propertyImage: ImageAssets.house4,
+      propertyType: 'Houses',
     ),
     PropertyModel(
       propertyName: 'Aces Villa',
@@ -29,6 +30,7 @@ class AppConstants {
       propertyFloor: 5,
       propertyArea: 3600,
       propertyImage: ImageAssets.house5,
+      propertyType: 'Lands',
     ),
     PropertyModel(
       propertyName: 'Green Yella',
@@ -41,6 +43,7 @@ class AppConstants {
       propertyFloor: 1,
       propertyArea: 1600,
       propertyImage: ImageAssets.house2,
+      propertyType: 'Lands',
     ),
     PropertyModel(
       propertyName: 'Barkat House',
@@ -53,13 +56,40 @@ class AppConstants {
       propertyFloor: 2,
       propertyArea: 5600,
       propertyImage: ImageAssets.house8,
+      propertyType: 'Houses',
+    ),
+    PropertyModel(
+      propertyName: 'Wiegen Apartment',
+      propertyLocation: 'Florida, US',
+      propertyPrice: 6000,
+      propertyDescription:
+          'Experience the grandeur of vintage charm in this beautifully restored Victorian townhouse. Original stained glass windows and gleaming hardwood floors create a sense of character and timeless elegance. The expansive living area provides ample space for entertaining, while the cozy bedrooms offer a quiet escape.',
+      propertyBathroom: 5,
+      propertyBeds: 4,
+      propertyFloor: 2,
+      propertyArea: 8600,
+      propertyImage: ImageAssets.apartment1,
+      propertyType: 'Apartments',
+    ),
+    PropertyModel(
+      propertyName: 'Georgia Apartment',
+      propertyLocation: 'New York, US',
+      propertyPrice: 6000,
+      propertyDescription:
+          'Experience the grandeur of vintage charm in this beautifully restored Victorian townhouse. Original stained glass windows and gleaming hardwood floors create a sense of character and timeless elegance. The expansive living area provides ample space for entertaining, while the cozy bedrooms offer a quiet escape.',
+      propertyBathroom: 3,
+      propertyBeds: 2,
+      propertyFloor: 2,
+      propertyArea: 9600,
+      propertyImage: ImageAssets.apartment2,
+      propertyType: 'Apartments',
     ),
   ];
 
   static List<Category> categories = [
     Category("Houses", ImageAssets.house5, true),
     Category("Apartments", ImageAssets.apartment1, false),
-    Category("Offices", ImageAssets.house8, false),
     Category("Lands", ImageAssets.farm1, false),
+    Category("Offices", ImageAssets.house8, false),
   ];
 }
